@@ -74,6 +74,15 @@
     <script src="assets/js/jquery.transit.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
       $(function() {
+        // fadein on page loaded
+        $('.main').css({opacity: '0.0'})
+        $('body')
+          .css({opacity: '0.0'})
+          .animate({opacity: '5'}, {duration: 500, complete: function(){
+            $('.main')
+              .animate({opacity: '1'}, 750);
+          }});
+          
         $('.item').css("cursor","pointer");
         
         $('.item').click(function() {
