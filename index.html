@@ -2,7 +2,6 @@
   <head>
     <link rel="stylesheet" href="assets/css/application.css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <title>zrn.btn - Top</title>
   </head>
@@ -10,36 +9,108 @@
     <div class="header">
       <div class="page-title">
         <img src="assets/img/icon.jpg" alt="icon" class="page-title-icon" />
-        <h1 class="page-title-text"><u>@aCetylAcid</u></h1>
+        <h1 class="page-title-text">zrn-ns.com</h1>
       </div>
     </div>
+    
     <div class="main">
-      
+      <div class="js-masonry" data-masonry-options='{
+        "itemSelector": ".item",
+        "transitionDuration": "0.8s",
+        "isFitWidth": true
+     }'>
+        <div class="item test">
+          <img src="assets/img/Twitter-Icon.png" alt="twitter" class="item-icon img-responsive" />
+          <p class="item-title">Twitter</p>
+          <p class="item-description">main account</p>
+          <a href="https://twitter.com/aCetylAcid/"></a>
+        </div>
+        <div class="item">
+          <img src="assets/img/facebook-Icon.png" alt="twitter" class="item-icon img-responsive" />
+          <p class="item-title">Facebook</p>
+          <a href="https://www.facebook.com/yuki.nagao.52"></a>
+        </div>
+        <div class="item">
+          <img src="assets/img/Tumblr-Icon.png" alt="tumblr" class="item-icon img-responsive" />
+          <p class="item-title">tumblr</p>
+          <p class="item-description">include blog</p>
+          <a href="http://c9-h8-o4.tumblr.com/"></a>
+        </div>
+        <div class="item">
+          <img src="assets/img/Github-Icon.png" alt="twitter" class="item-icon img-responsive" />
+          <p class="item-title">Github</p>
+          <p class="item-description">code</p>
+          <a href="https://github.com/aCetylAcid"></a>
+        </div>
+        <div class="item">
+          <img src="assets/img/Soundcloud-Icon.png" alt="soundcloud" class="item-icon img-responsive" />
+          <p class="item-title">SoundCloud</p>
+          <p class="item-description">listening only</p>
+          <a href="https://soundcloud.com/acetylacid"></a>
+        </div>
+        <div class="item">
+          <img src="assets/img/Instagram-Icon.png" alt="instagram" class="item-icon img-responsive" />
+          <p class="item-title">Instagram</p>
+          <a href="https://instagram.com/zrn_btn/"></a>
+        </div>
+        <div class="item">
+          <img src="assets/img/Email-Icon.png" alt="email" class="item-icon img-responsive" />
+          <p class="item-title">Contacts</p>
+          <a href=""></a>
+        </div>
+        
+      </div>
     </div>
+    
     <div class="footer">
-      <img src="assets/img/icon.jpg" alt="icon" class="anker-icon" />
+      <div class="content">
+        <p>v0.1.0</p>
+        <p>Designed by <a href="http://www.designbolts.com/2013/09/08/40-free-shaded-social-media-icons/" target="_blank" >Shaded Social Media Icons</a></p>
+      </div>
     </div>
-    <script src="assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="assets/js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="assets/js/jquery.animate-shadow-min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/masonry.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jquery.transit.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
       $(function() {
-        $('.page-title').css("cursor","pointer");
+        $('.item').css("cursor","pointer");
+        
+        $('.item').click(function() {
+          var location=$(this).find("a").attr("href");
+          if (location) {
+            window.open(location, '_blank');
+            return false;
+          } else {
+            return true;
+          };
+        });
+        $('.item').hover(
+          function(){
+            $(this).children('.item-icon').stop().transition({scale: '1.1'});
+            $(this).stop().animate({ backgroundColor: 'rgba(0,0,0,0.15)' }, 500);
+          },
+          function(){
+            $(this).children('.item-icon').stop().transition({scale: '1.0'});
+            $(this).stop().animate({ backgroundColor: 'rgba(0,0,0,0.05)' }, 500);
+          }
+        );
+        
+        $(window).scroll(function () {
+          var posTop = $('body').scrollTop();
+          if (posTop < 200) {
+            $('.page-title').css({'height': (300 - posTop - 50) + "px"});
+            $('.header').css({'height': (300 - posTop) + "px"});
+          };
+          
+          if ($('.page-title').height() < 150) {
+            var side = $('.page-title').height();
+            if (side < 150) {
+              $('.page-title-icon').stop().css({height: side + 'px', width: side + 'px', 'margin-top': '-' + side/2 + 'px', 'margin-left': '-' + side/2 + 'px'});
+            };
+          };
+        });
       });
-      
-      $('.page-title').click(function() {
-        window.open('https://twitter.com/aCetylAcid', '_blank');
-        return false;
-      });
-      $('.page-title').hover(
-        function(){
-          $(this).stop().animate({ backgroundColor: 'rgba(0,0,0,0.25)' }, 500);
-        },
-        function(){
-          $(this).stop().animate({ backgroundColor: 'rgba(0,0,0,0.2)' }, 500);
-        }
-       );
     </script>
   </body>
 </html>
