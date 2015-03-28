@@ -56,11 +56,41 @@ p {
   z-index:2;
 }
 
-.main .main-contacts
+.main-top
 {
   margin: 0px;
   overflow: hidden;
   padding: 0px 20px;
+}
+
+.main-top h2 {
+  text-align: center;
+}
+
+.main-works
+{
+  margin: 0px;
+  overflow: hidden;
+  padding: 0px 20px;
+}
+
+.main-works h2 {
+  text-align: center;
+}
+
+.works-item {
+  margin: 20px auto;
+}
+
+.main-contacts
+{
+  margin: 0px;
+  overflow: hidden;
+  padding: 0px 20px;
+}
+
+.main-contacts h2 {
+  text-align: center;
 }
 
 .js-masonry {

@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/jquery-ui.css" />
     <link rel="stylesheet" href="assets/css/animsition.min.css" />
+    <link rel="stylesheet" href="assets/css/CaptionerJs.min.css" />
     <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <script type="text/javascript" charset="utf-8">
       // generate mail address
@@ -14,7 +15,7 @@
       }
     </script>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <title>zrn.btn</title>
+    <title>zrn-ns.com</title>
   </head>
   <body class="content animsition">
     <div class="header">
@@ -26,6 +27,8 @@
     
     <div class="main">
       <div class="main-top" style="display: block;"><!-- .main-top -->
+        <h2>Contents</h2>
+        <hr />
         <div class="js-masonry" data-masonry-options='{
                 "itemSelector": ".item",
                 "transitionDuration": "0.8s",
@@ -66,24 +69,51 @@
             <a href="https://instagram.com/zrn_btn/" class="external-link"></a>
           </div>
           <div class="item linkbox">
+            <img src="assets/img/App-Icon.png" alt="instagram" class="item-icon img-responsive" />
+            <p class="item-title">Works</p>
+            <p class="item-description">developed/ing</p>
+            <a href="main-works"></a>
+          </div>
+          <div class="item linkbox">
             <img src="assets/img/Email-Icon.png" alt="email" class="item-icon img-responsive" />
             <p class="item-title">Contacts</p>
+            <p class="item-description">Who am I?</p>
             <a href="main-contacts"></a>
           </div>
         </div>
       </div><!-- / .main-top -->
       <div class="main-contacts" style="display: none;"><!-- .main-contacts -->
         <h2>Contacts</h2>
+        <hr />
         <table border="0" class="table">
           <tbody>
             <tr><td>Mail</td><td><script type="text/javascript">secretaddress();</script></td></tr>
             <tr><td>Twitter</td><td><a href="https://twitter.com/aCetylAcid___/" class="external-link">@aCetylAcid___</a></td></tr>
           </tbody>
         </table>
-        <div id="name">
-        </div>
-        <p><a href="main-top">Back</a></p>
+        <hr />
+        <p align="center"><a href="main-top">Back</a></p>
       </div><!-- / .main-contacts -->
+      <div class="main-works" style="display: none;"><!-- .main-works -->
+        <h2>Works</h2>
+        <hr />
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 works-item">
+              <a href="https://itunes.apple.com/td/app/mwhisp/id961006565?mt=8" class="external-link">
+                <img src="assets/img/ss_mwhisp.jpg" title="MWhisp" alt="Share playing song on Twitter simply." width="100%" role="caption" />
+              </a>
+            </div>
+            <div class="col-sm-6 works-item">
+              <a href="http://zrn-ns.com/" class="external-link">
+                <img src="assets/img/ss_hp.png" title="zrn-ns.com" alt="Homepage (developing)" width="100%" role="caption" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <p align="center"><a href="main-top">Back</a></p>
+      </div><!-- / .main-works -->
     </div>
     
     <div class="footer">
@@ -98,6 +128,7 @@
     <script src="assets/js/jquery.transit.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/jquery.animsition.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/CaptionerJs.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
       /**
        * open URL
@@ -123,6 +154,7 @@
                                      var mainToShow = $("." + url);
                                      $(mainToShow).css({'display': 'block'});
                                      
+                                     $('.js-masonry').masonry();
                                      $('.main').transition({opacity: 1.0});
                                    }, });
             };
