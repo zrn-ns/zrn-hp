@@ -109,7 +109,8 @@ p {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  max-width: 120px;
+  width: 120px;
+  height: 120px;
 }
 
 .item .item-title {
@@ -159,15 +160,16 @@ p {
   .main {
     width: 100%;
   }
-  
+
   .item {
     width: 100px !important;
   }
-  
+
   .item-icon {
-    max-width: 80px !important;
+    width: 80px !important;
+    height: 80px !important;
   }
-  
+
   .item-title {
     display: none;
   }
