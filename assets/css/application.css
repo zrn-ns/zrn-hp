@@ -56,6 +56,13 @@ p {
   z-index:2;
 }
 
+.main .main-contacts
+{
+  margin: 0px;
+  overflow: hidden;
+  padding: 0px 20px;
+}
+
 .js-masonry {
    margin: 0px auto;
 }
