@@ -2,6 +2,8 @@
   <head>
     <link rel="stylesheet" href="assets/css/application.css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/css/animsition.min.css" />
     <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <script type="text/javascript" charset="utf-8">
       // generate mail address
@@ -14,7 +16,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <title>zrn.btn</title>
   </head>
-  <body class="content">
+  <body class="content animsition">
     <div class="header">
       <div class="page-title">
         <a href="main-top"><img src="assets/img/icon.jpg" alt="icon" class="page-title-icon" /></a>
@@ -29,41 +31,41 @@
                 "transitionDuration": "0.8s",
                 "isFitWidth": true
               }'>
-          <div class="item test">
+          <div class="item linkbox">
             <img src="assets/img/Twitter-Icon.png" alt="twitter" class="item-icon img-responsive" />
             <p class="item-title">Twitter</p>
-            <p class="item-description">main account</p>
-            <a href="https://twitter.com/aCetylAcid/" class="external-link"></a>
+            <p class="item-description">main</p>
+            <a href="https://twitter.com/aCetylAcid___/" class="external-link"></a>
           </div>
-          <div class="item">
+          <div class="item linkbox">
             <img src="assets/img/facebook-Icon.png" alt="twitter" class="item-icon img-responsive" />
             <p class="item-title">Facebook</p>
             <a href="https://www.facebook.com/yuki.nagao.52" class="external-link"></a>
           </div>
-          <div class="item">
+          <div class="item linkbox">
             <img src="assets/img/Tumblr-Icon.png" alt="tumblr" class="item-icon img-responsive" />
             <p class="item-title">tumblr</p>
             <p class="item-description">include blog</p>
             <a href="http://c9-h8-o4.tumblr.com/" class="external-link"></a>
           </div>
-          <div class="item">
+          <div class="item linkbox">
             <img src="assets/img/Github-Icon.png" alt="twitter" class="item-icon img-responsive" />
             <p class="item-title">Github</p>
             <p class="item-description">code</p>
             <a href="https://github.com/aCetylAcid" class="external-link"></a>
           </div>
-          <div class="item">
+          <div class="item linkbox">
             <img src="assets/img/Soundcloud-Icon.png" alt="soundcloud" class="item-icon img-responsive" />
             <p class="item-title">SoundCloud</p>
             <p class="item-description">listening only</p>
             <a href="https://soundcloud.com/acetylacid" class="external-link"></a>
           </div>
-          <div class="item">
+          <div class="item linkbox">
             <img src="assets/img/Instagram-Icon.png" alt="instagram" class="item-icon img-responsive" />
             <p class="item-title">Instagram</p>
             <a href="https://instagram.com/zrn_btn/" class="external-link"></a>
           </div>
-          <div class="item">
+          <div class="item linkbox">
             <img src="assets/img/Email-Icon.png" alt="email" class="item-icon img-responsive" />
             <p class="item-title">Contacts</p>
             <a href="main-contacts"></a>
@@ -75,9 +77,11 @@
         <table border="0" class="table">
           <tbody>
             <tr><td>Mail</td><td><script type="text/javascript">secretaddress();</script></td></tr>
-            <tr><td>Twitter</td><td><a href="https://twitter.com/aCetylAcid/">@aCetylAcid</a></td></tr>
+            <tr><td>Twitter</td><td><a href="https://twitter.com/aCetylAcid___/" class="external-link">@aCetylAcid___</a></td></tr>
           </tbody>
         </table>
+        <div id="name">
+        </div>
         <p><a href="main-top">Back</a></p>
       </div><!-- / .main-contacts -->
     </div>
@@ -92,6 +96,8 @@
     <script src="assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/masonry.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/jquery.transit.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jquery.animsition.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
       /**
        * open URL
@@ -124,6 +130,26 @@
       }
       
       $(function() {
+        // configure animsition
+        $(".animsition").animsition({
+          inClass               :   'fade-in', // ロード時のエフェクト
+          outClass              :   'fade-out', //離脱時のエフェクト
+          inDuration            :    500, //ロード時の演出時間
+          outDuration           :    500, //離脱時の演出時間
+          linkElement           :   '.external-link', //アニメーションを行う要素
+          // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+          loading               :    true, //ローディングの有効/無効
+          loadingParentElement  :   'body', //ローディング要素のラッパー
+          loadingClass          :   'animsition-loading', //ローディングのクラス
+          unSupportCss          : [ 'animation-duration',
+                                    '-webkit-animation-duration',
+                                    '-o-animation-duration'
+                                  ],
+          overlay               :   false, //オーバーレイの有効/無効
+          overlayClass          :   'animsition-overlay-slide', //オーバーレイのクラス
+          overlayParentElement  :   'body' //オーバーレイ要素のラッパー
+        });
+        
         // fadein on page loaded
         $('.main').css({opacity: '0.0'});
         $('body')
@@ -133,13 +159,17 @@
               .animate({opacity: '1'}, 750);
           }});
 
-        // if item clicked and it has link, then open it.
-        $('.item').css("cursor","pointer");
-        $('.item').click(function() {
-          var location = $(this).find("a").attr("href");
-          var isExternalLink = $(this).find("a").hasClass("external-link");
-          openURL(location, isExternalLink);
-        });
+        // when hover on page-title-icon, then up opacity
+        $('.page-title-icon').hover(
+          function() {
+            $('.page-title-icon').stop().transition({scale: '1.1'});
+          },
+          function() {
+            $('.page-title-icon').stop().transition({scale: '1.0'});
+          }
+        );
+        
+        // when hover on masonry items, then animate.
         $('.item').hover(
           function(){
             $(this).children('.item-icon').stop().transition({scale: '1.1'});
@@ -154,25 +184,18 @@
         $('a').click(function() {
           var location = $(this).attr("href");
           var isExternalLink = $(this).hasClass("external-link");
-          console.log(location + " " + isExternalLink + " " + $('this').hasClass("external-link"));
           openURL(location, isExternalLink);
           return false;
         });
         
         // flexible header
         $(window).scroll(function () {
-          var posTop = $('body').scrollTop();
-          if (posTop < 200) {
-            $('.page-title').css({'height': (300 - posTop - 50) + "px"});
-            $('.header').css({'height': (300 - posTop) + "px"});
-          };
-          
-          if ($('.page-title').height() < 150) {
-            var side = $('.page-title').height();
-            if (side < 150) {
-              $('.page-title-icon').stop().css({height: side + 'px', width: side + 'px', 'margin-top': '-' + side/2 + 'px', 'margin-left': '-' + side/2 + 'px'});
-            };
-          };
+          var posTop = $('body').scrollTop() < 200 ? $('body').scrollTop() : 200;
+          $('.page-title').css({'height': (300 - posTop - 50) + "px"});
+          $('.header').css({'height': (300 - posTop) + "px"});
+
+          var side = $('.page-title').height() < 150 ? $('.page-title').height() : 150;
+          $('.page-title-icon').stop().css({height: side + 'px', width: side + 'px', 'margin-top': '-' + side/2 + 'px', 'margin-left': '-' + side/2 + 'px'});
         });
       });
     </script>
