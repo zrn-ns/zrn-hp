@@ -10,6 +10,7 @@ Environment:
 * [jQuery UI](https://jqueryui.com/) - v1.11.4 (min)
 * [jQuery.Transit](http://ricostacruz.com/jquery.transit/) - v0.9.12 (min)
 * [jQuery.Animsition](http://git.blivesta.com/animsition/) - v3.4.3 (min)
+* [jQuery.cb-Konami](https://github.com/maechabin/jquery.cb-konami.js) - v1.0.3 (min)
 * [Captioner.js](http://francodacosta.com/captionerjs/) - v1.0.3 (min)
 * [Masonry](http://masonry.desandro.com/) - v3.2.2 (min)
 * [Shaded Social Media Icons](http://www.designbolts.com/2013/09/08/40-free-shaded-social-media-icons/) 
