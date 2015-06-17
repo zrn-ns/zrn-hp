@@ -39,7 +39,7 @@
             <p class="item-title">Twitter</p>
             <a href="https://twitter.com/aCetylAcid___/" class="external-link"></a>
           </div>
-          <div class="item linkbox">
+          <div class="item linkbox secret_info">
             <img src="assets/img/facebook-Icon.png" alt="twitter" class="item-icon img-responsive" />
             <p class="item-title">Facebook</p>
             <a href="https://www.facebook.com/yuki.nagao.52" class="external-link"></a>
@@ -86,8 +86,7 @@
         <hr />
         <table border="0" class="table">
           <tbody>
-            <tr><td>Name</td><td>Yuki Nagao</td></tr>
-            <tr><td>Affiliation</td><td><a href="http://plise.co.jp" class="external-link">PLISE.inc</a></td></tr>
+            <tr class="secret_info"><td>Name</td><td>Yuki Nagao</td></tr>
             <tr><td>Mail</td><td><script type="text/javascript">secretaddress();</script></td></tr>
             <tr><td>Twitter</td><td><a href="https://twitter.com/aCetylAcid___/" class="external-link">@aCetylAcid___</a></td></tr>
           </tbody>
@@ -119,7 +118,7 @@
     
     <div class="footer">
       <div class="content">
-        <p>v0.1.0</p>
+        <p>v0.1.1</p>
         <p>Designed by <a href="http://www.designbolts.com/2013/09/08/40-free-shaded-social-media-icons/" class="external-link" >Shaded Social Media Icons</a></p>
       </div>
     </div>
@@ -128,6 +127,7 @@
     <script src="assets/js/masonry.pkgd.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/jquery.transit.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/jquery.animsition.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jquery.cbkonami.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/CaptionerJs.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
@@ -161,6 +161,12 @@
             };
         };
       }
+      
+      // Secret Cells
+      function showSecrets() {
+        $('.secret_info').show();
+        $('.js-masonry').masonry();
+      };
       
       $(window).load(function() {
         // configure animsition
@@ -229,6 +235,11 @@
 
           var side = $('.page-title').height() < 150 ? $('.page-title').height() : 150;
           $('.page-title-icon').stop().css({height: side + 'px', width: side + 'px', 'margin-top': '-' + side/2 + 'px', 'margin-left': '-' + side/2 + 'px'});
+        });
+        
+        // show secret cells
+        $(window).cbKonami(function () {
+          showSecrets();
         });
       });
     </script>
