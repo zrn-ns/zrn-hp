@@ -168,6 +168,14 @@
         $('.js-masonry').masonry();
       };
       
+      // ??
+      function easterEgg() {
+        $('h1').html('I WANNA EAT SUSHI');
+        $('body').css('background-image', 'url("http://blogs.c.yimg.jp/res/blog-9e-79/jterasaka/folder/704092/25/41526425/img_0")');
+        $('.page-title-icon').attr('src', 'http://r-research.co.jp/blog/wp-content/uploads/2012/04/sa-mon.jpg');
+        $('p,h2,h3').append('🍣');
+      }
+      
       $(window).load(function() {
         // configure animsition
         $(".animsition").animsition({
@@ -240,6 +248,7 @@
         // show secret cells
         $(window).cbKonami(function () {
           showSecrets();
+          easterEgg();
         });
       });
     </script>
