@@ -7,7 +7,7 @@ p {
 }
 
 body {
-  background-image: url("../img/nebuta.jpg");
+  background-color: #FDC44F !important;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -24,12 +24,12 @@ body {
 }
 
 .header .page-title {
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.1);
   height: 250px;
   width: 100%;
   overflow: hidden;
   position: absolute;
-  box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
 }
 
 .header .page-title-icon {
@@ -157,11 +157,11 @@ body {
 }
 
 .footer .content {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.1);
   text-align: center;
   width: 90%;
   margin: 50px auto;
-  box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.1);
 }
 
 .footer p {
